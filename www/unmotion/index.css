@@ -1,0 +1,99 @@
+.fileDrop {
+    padding: 70px 0;
+    width: auto;
+    text-align: center;
+    background-color: #666;
+    outline: 2px dashed #324;
+    outline-offset: -25px;
+    border-radius: 3px;
+    margin: 5px;
+    transition-duration: 0.4s;
+}
+
+.fileDrop.draggedOver {
+    background-color: #555;
+    color: #999;
+    outline: 2px dashed white;
+    outline-offset: -15px;
+}
+
+.fileDrop * { /* avoid retriggering events on children (the text) */
+    pointer-events: none;
+}
+
+.fileDrop:hover {
+    outline: 2px dashed white;
+    outline-offset: -15px;
+}
+
+.fileArticle {
+    background-color: #666;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.fileArticle section {
+    display: flex;
+    align-items: center;
+}
+
+.fileArticle button, .fileArticle img, .fileArticle video {
+    margin: 5px;
+}
+
+.imgPreview {
+    height: 200px;
+}
+
+.vidPreview {
+    height: 200px;
+}
+
+.errMsg {
+    color: rgb(255, 90, 90);
+}
+
+/* grid layout assignment */
+header {
+    grid-area: header;
+}
+
+#inputbox {
+    grid-area: input;
+}
+
+#resultbox {
+    grid-area: result;
+}
+
+#infosbox {
+    grid-area: infos;
+}
+
+/* mobile layout */
+#wrapper {
+    grid-template-columns: 100%;
+    grid-template-areas:
+    "header"
+    "input"
+    "result"
+    "infos";
+    border-radius: 0px;
+}
+
+@media only screen and (min-width: 900px) {
+    #wrapper {
+        grid-template-columns: 30% auto;
+        grid-template-rows: auto minmax(min-content, 10px) auto;
+        grid-template-areas:
+        "header header"
+        "input result"
+        "infos infos";
+        border-radius: 5px;
+    }
+    body {
+        margin: 10px;
+    }
+}

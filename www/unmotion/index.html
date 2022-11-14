@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unMotion</title>
+    <meta name="description" content="experiment with Motion Photos">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="theme_common.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="box">
+            <h1>unMotion</h1>
+            <div>
+                <p>Split a Motion Photo</p>
+            </div>
+        </header>
+
+        <div id="inputbox" class="box">
+            <div>
+                <label for="fileInput">Motion Photo file(s) :</label>
+                <input type="file" id="fileInput" name="fileInput" multiple />
+            </div>
+            <div id="fileDrop" class="fileDrop">
+                <p>... or drag and drop here ↥</p>
+            </div>
+        </div>
+        <div id="resultbox" class="box"></div>
+
+        <footer id="infosbox" class="box">
+            <h2>Usage and information</h2>
+            <div>
+                <h3>Usage help :</h3>
+                <p>
+                <ol>
+                    <li>You select files from your computer (most likely, <code>.jpg</code> files).</li>
+                    <li>Files are <em>locally</em> processed. Nothing is sent to any server, it is your computer who
+                        does the calculations. Your files stay yours.</li>
+                    <li>For each file, this tool tries to detect if your file is a Motion Photo. If not, a message is
+                        displayed.</li>
+                    <li>If a file is a Motion Photo, this tool extracts the image and the video separately, and makes
+                        them available both as a preview and as a download button.</li>
+                </ol>
+                </p>
+                <div>
+                    <h3>Other info :</h3>
+                    <p>See Github for : <a href="https://github.com/smmilut/unmotion" target="_blank">code</a>, <a
+                            href="https://github.com/smmilut/unmotion/blob/main/LICENSE" target="_blank">license</a>,
+                        <a href="https://github.com/smmilut/unmotion/blob/main/README.md" target="_blank">privacy</a>.
+                    </p>
+                </div>
+        </footer>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
