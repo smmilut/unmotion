@@ -22,12 +22,16 @@ export function showFileInfo(fileInfo) {
     const article = getOrCreateArticle(fileInfo.name);
 
     const infoDiv = document.createElement("div");
-    const sizeInfo = document.createElement("p");
-    sizeInfo.textContent = bytesUnit(fileInfo.size).sizeString;
-    infoDiv.appendChild(sizeInfo);
-    const dateInfo = document.createElement("p");
-    dateInfo.textContent = `last modified ${fileInfo.lastModifiedDate}`;
-    infoDiv.appendChild(dateInfo);
+    if (fileInfo.size) {
+        const sizeInfo = document.createElement("p");
+        sizeInfo.textContent = bytesUnit(fileInfo.size).sizeString;
+        infoDiv.appendChild(sizeInfo);
+    }
+    if (fileInfo.lastModifiedDate) {
+        const dateInfo = document.createElement("p");
+        dateInfo.textContent = `last modified ${fileInfo.lastModifiedDate}`;
+        infoDiv.appendChild(dateInfo);
+    }
     article.appendChild(infoDiv);
 
     Output_resultboxEl.appendChild(article);
